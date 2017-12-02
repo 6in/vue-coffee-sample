@@ -22,16 +22,21 @@ export default
 
     getCenter: () ->
       me = this
-      [w,h] = @getWH()
+      wh = @getWH()
+      w = wh[0]
+      h = wh[1]
       console.log w,h
       
       cx = w / 2
       cy = h - 30
+      #"translate(${cx},${cy}) rotate(90)"
       "translate(#{cx},#{cy}) rotate(90)"
 
     makeScales: (start,end) ->
       data = []
-      [w,h] = @getWH()
+      wh = @getWH()
+      w = wh[0]
+      h = wh[1]
       moveValue = w / 2 - 60
       for x in [start..end] by 10
         x += 3

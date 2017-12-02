@@ -8,6 +8,8 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+console.log(JSON.stringify(vueLoaderConfig,null,2))
+
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -46,7 +48,18 @@ module.exports = {
       },
       {
         test: /\.coffee$/,
-        loader: 'babel-loader!coffee-loader'
+        loader: 'coffee-loader',
+        options: {
+          sourceMap: true,
+          transpile: { presets: ['env']}
+        }
+        // use: {
+        //   loader: 'coffee-loader',
+        //   options: {
+        //     sourceMap: true,
+        //     transpile: {presets: ['env']},
+        //   }
+        // }
       },
       {
         test: /\.js$/,

@@ -1,4 +1,4 @@
-import MyClass from '../webapi'
+#import MyClass from '../webapi'
 import yaml from 'js-yaml'
 import Meter from './meter/meter'
 
@@ -38,9 +38,9 @@ export default {
 			#@someMethod(event.srcElement)
 			#@options.title.text = "タイトル変更"
 			me.rows.push(name:'someone')
-			new MyClass().someMethod1().then((ok)->
-				me.options1 = ok
-			)
+			# new MyClass().someMethod1().then((ok)->
+			# 	me.options1 = ok
+			# )
 
 			console.log yaml.load("""
 abc:
@@ -48,6 +48,6 @@ abc:
 			""")
 
 		someMethod: (elm) ->
-			console.log new MyClass().someMethod1()
+			#console.log new MyClass().someMethod1()
 
 		}

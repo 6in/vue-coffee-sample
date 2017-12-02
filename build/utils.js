@@ -28,7 +28,7 @@ exports.cssLoaders = function (options) {
     }
   }
   var coffee = {
-    loader: 'coffee-loader',
+    loader: 'babel-loader!coffee-loader',
   }
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
@@ -62,7 +62,14 @@ exports.cssLoaders = function (options) {
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
-    styl: generateLoaders('stylus')
+    style: generateLoaders('stylus'),
+    // coffee: {
+    //   loader: 'coffee-loader',
+    //   options: {
+    //     sourceMap: true,
+    //     transpile: { presets: ['env']}
+    //   }
+    // }
   }
 }
 
