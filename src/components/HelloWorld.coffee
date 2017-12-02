@@ -1,11 +1,13 @@
 import MyClass from '../webapi'
 import yaml from 'js-yaml'
+import Meter from './meter/meter'
 
 export default {
 	name: 'HelloWorld'
 	components: {
 		'my-canvas':
 			template: '<div>hello custom component</div>'
+		'dso-meter': Meter
 	}
 	created: ->
 		console.log "created"
@@ -19,6 +21,9 @@ export default {
 				{ name: 'manaka' }
 				{ name: 'abe' }
 			]
+			
+
+
 			options1:
 				title:
 					text: ''

@@ -1,5 +1,13 @@
 <template>
   <div class="hello">
+
+    
+    <dso-meter g_width=500 height="250" />
+
+
+
+
+
     <my-canvas />
     <el-date-picker v-model="datetime" type="datetime" placeholder="日時を選択してください"></el-date-picker>
     <button v-on:click="onClick">click me</button>
@@ -10,7 +18,8 @@
         <td>{{ row.name }}</td>
       </tr>
     </table>
-    
+
+
     <highcharts :options="options1"></highcharts>
 
 
