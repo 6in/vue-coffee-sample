@@ -47,7 +47,7 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
-        test: /\.coffee$/,
+        test: /\.coffee2$/,
         loader: 'coffee-loader',
         options: {
           sourceMap: true,

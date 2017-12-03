@@ -63,6 +63,14 @@ exports.cssLoaders = function (options) {
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
     style: generateLoaders('stylus'),
+    coffee: {
+      loader: 'coffee-loader',
+      options: {
+        atVue: true,
+        sourceMap: true,
+        transpile: { presets: ['env']}
+      }
+    }
     // coffee: {
     //   loader: 'coffee-loader',
     //   options: {
