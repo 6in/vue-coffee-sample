@@ -8,7 +8,7 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-console.log(JSON.stringify(vueLoaderConfig,null,2))
+//console.log(JSON.stringify(vueLoaderConfig,null,2))
 
 module.exports = {
   context: path.resolve(__dirname, '../'),

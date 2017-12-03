@@ -11,6 +11,12 @@ export default {
 	}
 	created: ->
 		console.log "created"
+		me = this
+		setInterval( ->
+			me.line_speed_value += 5
+		
+		, 100)
+
 	data: ->
 		return {
 			msg: 'hello oyabin 2017-11-25'
@@ -22,12 +28,20 @@ export default {
 				{ name: 'abe' }
 			]
 			
-
-
+			line_speed: 'rotate(45) translate(-100,0)'
+			line_speed_value: -100
 			options1:
 				title:
 					text: ''
 		}
+
+	watch:
+		line_speed_value: (newValue) ->
+			#console.log {newValue}
+			me = this
+			#me.line_speed_value = 0 if me.line_speed_value >= 50
+			value = newValue % 50
+			me.line_speed = "rotate(45) translate(#{value},0)"
 
 	methods:
 		onClick: (event) ->
@@ -37,7 +51,7 @@ export default {
 			# methodsもdataにバインドされる
 			#@someMethod(event.srcElement)
 			#@options.title.text = "タイトル変更"
-			me.rows.push(name:'someone')
+			#me.rows.push(name:'someone')
 			# new MyClass().someMethod1().then((ok)->
 			# 	me.options1 = ok
 			# )
@@ -47,6 +61,11 @@ abc:
   def: "ghi"
 			""")
 
+			console.log(me.$refs.white_line)
+			me.line_speed_value += 5
+			# me.line_speed_value = 0 if me.line_speed_value >= 50
+			# me.line_speed = "rotate(45) translate(#{me.line_speed_value},0)"
+			
 		someMethod: (elm) ->
 			#console.log new MyClass().someMethod1()
 

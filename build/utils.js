@@ -62,7 +62,7 @@ exports.cssLoaders = function (options) {
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
-    style: generateLoaders('stylus'),
+    styl: generateLoaders('stylus'),
     coffee: {
       loader: 'coffee-loader',
       options: {
